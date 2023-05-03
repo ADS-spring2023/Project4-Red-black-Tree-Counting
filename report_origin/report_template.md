@@ -19,11 +19,49 @@
 
 ### Algorithm 1
 
+```C++
+#include <iostream>
+using namespace std;
+int redBlackCount(int n){
+    int B[n+1][n+1];//根节点为黑色
+    int R[n+1][n+1];//根节点为红色
+    for(int i=0;i<=n;i++){
+        for(int j=0;j<=n;j++){
+            R[i][j]=0;
+            B[i][j]=0;
+        }
+    }
+    B[1][2]=1;B[2][2]=2;B[3][3]=1;B[3][2]=1;R[3][2]=1;//初始化一些数据便于计算
+    for(int k=4;k<=n;k++){//总个数，最多n-1个
+        for(int i=1;i<k-1;i++){//左子树个数，最多k-1个
+            for(int j=0;j<=k;j++){//左右子树黑节点层数，最多i个
+                R[k][j]+=B[i][j]*B[k-i-1][j];
+                B[k][j+1]+=R[i][j]*B[k-i-1][j]+B[i][j]*R[k-i-1][j]+B[i][j]*B[k-i-1][j];
+            }
+        }
+    }
+    int num=0;
+    for(int i=0;i<=n;i++){
+        num+=B[n][i];
+    }
+    return num;
+}
+int main(){
+    cout<<redBlackCount(6);
+}
+```
+
+The algorithm works by using dynamic programming to build up the count of red-black trees for each number of nodes. It initializes two matrices, B and R, to keep track of the counts of black-rooted and red-rooted trees, respectively. It then iterates through each possible number of nodes, k, and for each k, iterates through each possible number of nodes in the left subtree, i. For each combination of k and i, it calculates the count of red-rooted trees with k nodes and j black nodes in the left subtree, as well as the count of black-rooted trees with k nodes and j+1 black nodes in the left subtree. It does this by using the counts of red- and black-rooted trees for the left and right subtrees of size i and k-i-1, respectively.
+
 ## Test Results
+
+![img](file:///D:\qq文件\766748001\Image\C2C\E57177E22CAAF5653A25BA35DEFE94C3.png)
 
 ## Analysis
 
 ### Algorithm 1
+
+The time complexity of this algorithm is O(n^3), since it involves three nested loops, each of which iterates up to n times. The space complexity is also O(n^2), since it uses two matrices of size n+1 by n+1.
 
 ## Declaration
 
