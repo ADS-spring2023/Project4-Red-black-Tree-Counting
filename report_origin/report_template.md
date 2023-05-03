@@ -53,9 +53,23 @@ int main(){
 
 The algorithm works by using dynamic programming to build up the count of red-black trees for each number of nodes. It initializes two matrices, B and R, to keep track of the counts of black-rooted and red-rooted trees, respectively. It then iterates through each possible number of nodes, k, and for each k, iterates through each possible number of nodes in the left subtree, i. For each combination of k and i, it calculates the count of red-rooted trees with k nodes and j black nodes in the left subtree, as well as the count of black-rooted trees with k nodes and j+1 black nodes in the left subtree. It does this by using the counts of red- and black-rooted trees for the left and right subtrees of size i and k-i-1, respectively.
 
+### Algorithm 2
+
+Replace this sentence by zjf's work.
+
+#### tips
+
+NTT requires the module to have primary root. So we solve the problem with module 998244353, whose primary root is 3. For the same problem with module 1e9+7, we can use 3-module-NTT. But it's too complex for us, so we haven't tried that.
+
 ## Test Results
 
+### Algorithm 1
+
 ![img](file:///D:\qq文件\766748001\Image\C2C\E57177E22CAAF5653A25BA35DEFE94C3.png)
+
+### Algorithm 2
+
+![](2023-05-03-12-16-25.png)
 
 ## Analysis
 
