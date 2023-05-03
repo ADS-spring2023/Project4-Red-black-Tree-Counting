@@ -77,6 +77,10 @@ NTT requires the module to have primary root. So we solve the problem with modul
 
 The time complexity of this algorithm is O(n^3), since it involves three nested loops, each of which iterates up to n times. The space complexity is also O(n^2), since it uses two matrices of size n+1 by n+1.
 
+### Algotithm 2
+
+The optimal time complexity of this algorithm is O(n(logn)^2). The number of polynomial multiplication is O(logn), while using NTT method, we can make the time complexity of each multiplication as O(nlogn). The product of these 2 factors is O(n(logn)^2).
+
 ## Declaration
 
 I hereby declare that all the work done in this project titled ”Maximum
