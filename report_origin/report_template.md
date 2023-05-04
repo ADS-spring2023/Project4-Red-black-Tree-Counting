@@ -103,7 +103,7 @@ NTT requires the module to have primary root. So we solve the problem with modul
 
 There are 2 red-black-trees when n=2. Note that mirror symmetric cases are not considered the same.
 
-![img](D:\CollegeCourses\ADS\Project\Project4-Red-black-Tree-Counting\report_origin\E57177E22CAAF5653A25BA35DEFE94C3.png)
+![img](E57177E22CAAF5653A25BA35DEFE94C3.png)
 
 ### Algorithm 2 OJ result
 
