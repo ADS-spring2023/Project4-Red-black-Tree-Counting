@@ -71,9 +71,9 @@ $R_h$ $(x)$ = $x$ $T_h$ $(x)$ $^2$     $......(2)$
 
 The reason is: a subtree of black height $h$, with a red root, must have $2$ children of black height $h$ with a black root.
 
-Thus, the counting problem has been transferred to a polynomial calculation problem.Since the black height h is of $O(logn)$, the number of polynomial addition and multiplication are also of $O(logn)$. For each black height $h$, we first calculate $T_h$ $(x)$ using formula $(1)$, then calculate $R_h$ $(x)$ according to formula $(2)$.
+Thus, the counting problem has been transferred to a polynomial calculation problem. Since the black height h is of $O(logn)$, the number of polynomial addition and multiplication are also of $O(logn)$. For each black height $h$, we first calculate $T_h$ $(x)$ using formula $(1)$, then calculate $R_h$ $(x)$ according to formula $(2)$.
 
-Finally, the number of structures for a tree with exactly n internal nodes, can be derived by traversing $T_1(x)$ $,$ $T_2(x)$ $,...,$ $T_h(x)$ and accumulating the coeffiecient of $x^n$.If we use an array to represent each $T_h$, and the index of each element is exactly matched with the exponent of $x$, then we only need to sum $T_h[n]$ for h in range $[1,log_2(n+1)]$.
+Finally, the number of structures for a tree with exactly n internal nodes, can be derived by traversing $T_1(x)$ $,$ $T_2(x)$ $,...,$ $T_h(x)$ and accumulating the coefficient of $x^n$.If we use an array to represent each $T_h$, and the index of each element is exactly matched with the exponent of $x$, then we only need to sum $T_h[n]$ for h in range $[1,log_2(n+1)]$.
 
 If we use NTT to solve this problem, the time complexity of each polynomial calculation can be reduced to $O(logn)$.
 
@@ -83,11 +83,13 @@ NTT requires the module to have primary root. So we solve the problem with modul
 
 ## Test Results
 
-### Algorithm 1
+### Small Case Description
 
-![img](file:///D:\qq文件\766748001\Image\C2C\E57177E22CAAF5653A25BA35DEFE94C3.png)
+There are 2 red-black-trees when n=2. Note that mirror symmetric cases are not considered the same.
 
-### Algorithm 2
+![img](D:\CollegeCourses\ADS\Project\Project4-Red-black-Tree-Counting\report_origin\E57177E22CAAF5653A25BA35DEFE94C3.png)
+
+### Algorithm 2 OJ result
 
 ![](2023-05-03-12-16-25.png)
 
@@ -103,5 +105,4 @@ The optimal time complexity of this algorithm is $O(n$ $(logn)$ $^2$ $)$. The nu
 
 ## Declaration
 
-I hereby declare that all the work done in this project titled ”Maximum
-Submatrix Sum” is of my independent effort.
+I hereby declare that all the work done in this project is of my independent effort.
