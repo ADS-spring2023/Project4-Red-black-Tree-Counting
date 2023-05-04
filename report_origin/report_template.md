@@ -63,8 +63,7 @@ $T_1$ $(x)$ = $x$ $+$ $2$ $x^2$ $+$ $x^3$.
 The meaning of this expression is: When the black height of the RB-Tree is $1$, there exist totally $1 + 2 + 1 = 4$ different structures.The reason is that, if there are only $1$ node in the tree, then the node must be black($1$ structure); if there are $2$ nodes in the tree, then the root must be black, and the leave must be red, which can be either the left child or the right child of the black root($2$ structures); if there are $3$ nodes in the tree, then the root must be black, and its $2$ children are both red($1$ structure).
 Here comes the recursion formula:
 
-$T$ $_h$ $_+$ $_1$ $(x)$ = $x$ $($ $R_h$ $(x)$ + $T_h$ $(x)$ ) $^2$ = $x$ $T_h$ $(x)$ $^2$ $(1+$ $x$ $T_h$ $(x)$ $)$ $^2$
-    $......(1)$
+$T$ $_h$ $_+$ $_1$ $(x)$ = $x$ $($ $R_h$ $(x)$ + $T_h$ $(x)$ ) $^2$ = $x$ $T_h$ $(x)$ $^2$ $(1+$ $x$ $T_h$ $(x)$ $)$ $^2$ $......(1)$
 
 The meaning of this formula is: The root of the RB-Tree of black height $h+1$ must be black, thus it will have two children of black height h.Besides, each child of the root can be red or black. We also notice that:
 
@@ -96,11 +95,11 @@ NTT requires the module to have primary root. So we solve the problem with modul
 
 ### Algorithm 1
 
-The time complexity of this algorithm is O(n^3), since it involves three nested loops, each of which iterates up to n times. The space complexity is also O(n^2), since it uses two matrices of size n+1 by n+1.
+The time complexity of this algorithm is $O($ $n^3$ $)$, since it involves three nested loops, each of which iterates up to n times. The space complexity is also $O($ $n^2$ $)$, since it uses two matrices of size $n+1$ by $n+1$.
 
 ### Algotithm 2
 
-The optimal time complexity of this algorithm is O(n(logn)^2). The number of polynomial multiplication is O(logn), while using NTT method, we can make the time complexity of each multiplication as O(nlogn). The product of these 2 factors is O(n(logn)^2).
+The optimal time complexity of this algorithm is $O(n$ $(logn)$ $^2$ $)$. The number of polynomial multiplication is $O(logn)$, while using NTT method, we can make the time complexity of each multiplication as $O(nlogn)$. The product of these two factors is  $O(n$ $(logn)$ $^2$ $)$.
 
 ## Declaration
 
