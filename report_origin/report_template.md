@@ -64,17 +64,17 @@ The meaning of this expression is: When the black height of the RB-Tree is $1$, 
 Here comes the recursion formula:
 
 $T$ $_h$ $_+$ $_1$ $(x)$ = $x$ $($ $R_h$ $(x)$ + $T_h$ $(x)$ ) $^2$ = $x$ $T_h$ $(x)$ $^2$ $(1+$ $x$ $T_h$ $(x)$ $)$ $^2$
-$(1)$
+    $......(1)$
 
 The meaning of this formula is: The root of the RB-Tree of black height $h+1$ must be black, thus it will have two children of black height h.Besides, each child of the root can be red or black. We also notice that:
 
-$R_h$ $(x)$ = $x$ $T_h$ $(x)$ $^2$ $(2)$
+$R_h$ $(x)$ = $x$ $T_h$ $(x)$ $^2$     $......(2)$
 
 The reason is: a subtree of black height $h$, with a red root, must have $2$ children of black height $h$ with a black root.
 
 Thus, the counting problem has been transferred to a polynomial calculation problem.Since the black height h is of $O(logn)$, the number of polynomial addition and multiplication are also of $O(logn)$. For each black height $h$, we first calculate $T_h$ $(x)$ using formula $(1)$, then calculate $R_h$ $(x)$ according to formula $(2)$.
 
-Finally, the number of structures for a tree with exactly n internal nodes, can be derived by traversing $T_1(x)$ $,$ $T_2(x)$ $,...,$ $T_h(x)$ and accumulating the coeffiecient of $x^n$.If we use an array to represent each $T_h$, and the index of each element is exactly matched with the factor of $x$, then we only need to sum $T_h[n]$ for h in range $[1,log_2(n+1)]$  
+Finally, the number of structures for a tree with exactly n internal nodes, can be derived by traversing $T_1(x)$ $,$ $T_2(x)$ $,...,$ $T_h(x)$ and accumulating the coeffiecient of $x^n$.If we use an array to represent each $T_h$, and the index of each element is exactly matched with the exponent of $x$, then we only need to sum $T_h[n]$ for h in range $[1,log_2(n+1)]$.
 
 If we use NTT to solve this problem, the time complexity of each polynomial calculation can be reduced to $O(logn)$.
 
