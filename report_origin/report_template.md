@@ -16,12 +16,19 @@
 ## Introduction
 
 Given an input N, print out the number of distinct structures of RB-Tree with exactly N internal nodes.
+
 The definition of "distinct" is: Once the structures of 2 RB-Trees are not exactly the same, they will be viewed as different. Two symmetric but not identical RB-Trees will also be viewed as different/distinct. 
+
 The property of RB-Tree is:
+
 (1) Every node is either red or black.
+
 (2) The root is black.
+
 (3) All the leaves are NULL nodes and are colored black.
+
 (4) Each red node must have 2 black descends (may be NULL).
+
 (5) All simple paths from any node x to a descendant leaf have the same number of black nodes.
 
 ## Algorithm Specification
